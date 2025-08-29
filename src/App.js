@@ -1,15 +1,18 @@
-import './App.css';
-import Navbar
- from './components/Navbar';
+// App.js
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import AppRoutes from "./Routes";
+
 function App() {
   return (
-    <div className="App">
-  
-    
+    <BrowserRouter>
+      {/* Navbar stays on every page */}
+      <Navbar />
 
-    
-    <Navbar />
-    </div>
+      {/* Your page routes are defined in Routes.js */}
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
