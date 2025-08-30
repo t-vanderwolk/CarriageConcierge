@@ -5,7 +5,7 @@ import About from "../pages/About";
 import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import RequestAccess from "./RequestAccess";
-// import Profile from "../pages/Profile";
+import Profile from "../pages/Profile";
 import { Section } from "./ui/Section";
 import { Button } from "./ui/Button";
 
@@ -17,7 +17,7 @@ function AppRoutes() {
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/request-access" element={<RequestAccess />} />
-      {/* <Route path="/profile" element={<Profile />} /> */}
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
