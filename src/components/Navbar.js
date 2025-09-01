@@ -1,26 +1,26 @@
+// components/Navbar.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "./ui/Container";
-import { Button } from "./ui/Button";
 
-function Navbar() {
+export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-rose-100 bg-white/90 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between">
-        <Link to="/" className="text-xl md:text-2xl font-serif tracking-wide text-rose-900">
-          The Carriage Concierge
+    <nav className="bg-black text-white border-b border-neutral-200">
+      <div className="mx-auto max-w-6xl px-6 md:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="font-serif text-xl tracking-wide">
+          Carriage Concierge
         </Link>
-        <div className="flex items-center gap-6">
-          <ul className="hidden md:flex items-center gap-6 text-slate-700 font-medium">
-            <li><Link to="/about" className="hover:text-rose-700">About</Link></li>
-            <li><Link to="/services" className="hover:text-rose-700">Services</Link></li>
-            <li><Link to="/contact" className="hover:text-rose-700">Contact</Link></li>
-          </ul>
-          <Button to="/request-access" variant="primary">Request Access</Button>
+
+        {/* Links */}
+        <div className="flex gap-6 text-sm">
+          <Link to="/about" className="hover:text-neutral-300">About</Link>
+          <Link to="/services" className="hover:text-neutral-300">Services</Link>
+          <Link to="/contact" className="hover:text-neutral-300">Contact</Link>
         </div>
-      </Container>
+      </div>
     </nav>
   );
 }
 
-export default Navbar;
+// Example usage: import this Navbar at the top of App.js
+// and wrap around your Routes component.

@@ -21,3 +21,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@layer base {
+  :root {
+    --cc-maxw: 72rem;             /* ~1152px */
+    --cc-radius: 1rem;            /* 16px */
+  }
+
+  h1,h2,h3 { @apply font-serif tracking-wide text-black; }
+  h1 { @apply text-4xl md:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-xl; }
+  p  { @apply text-neutral-700; }
+  a  { @apply underline-offset-2; }
+}
+
+@layer components {
+  .cc-container { @apply mx-auto px-6 md:px-8; max-width: var(--cc-maxw); }
+  .cc-card { @apply rounded-2xl border border-neutral-200 bg-white shadow-none; }
+  .cc-section { @apply py-12; }
+  .cc-divider { @apply border-t border-neutral-200; }
+  .cc-input { @apply w-full rounded-xl border border-neutral-300 px-4 py-3 focus:outline-none focus:border-black bg-white text-black; }
+  .cc-label { @apply block text-sm text-neutral-600 mb-2; }
+}
+
+@layer utilities {
+  .cc-muted { @apply text-neutral-500; }
+}
