@@ -9,11 +9,11 @@ export default function Benefits() {
         <div className="grid md:grid-cols-4 gap-6 cc-container max-w-5xl mx-auto">
           <Card>
             <h3 className="font-serif text-xl">Guest Satisfaction</h3>
-            <p className="mt-2">Families feel cared for, return more often, and recommend your property.</p>
+            <p className="mt-2">Families feel genuinely cared for and return more often.</p>
           </Card>
           <Card>
             <h3 className="font-serif text-xl">Incremental Revenue</h3>
-            <p className="mt-2">Commission on each booking with tiered menus that fit your market.</p>
+            <p className="mt-2">Commission on each booking with tiered menus fit to your market.</p>
           </Card>
           <Card>
             <h3 className="font-serif text-xl">Zero Operational Lift</h3>
@@ -21,7 +21,7 @@ export default function Benefits() {
           </Card>
           <Card>
             <h3 className="font-serif text-xl">Stand-Out Positioning</h3>
-            <p className="mt-2">Differentiate in competitive markets with a true family-ready experience.</p>
+            <p className="mt-2">Differentiate with a true family-ready experience, on brand.</p>
           </Card>
         </div>
       </Section>

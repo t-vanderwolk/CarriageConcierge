@@ -1,4 +1,3 @@
-// pages/Home.js
 import React from "react";
 import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
@@ -7,19 +6,23 @@ import Card from "../components/ui/Card";
 export default function Home() {
   return (
     <main className="bg-white text-black">
-      {/* HERO — Hotel Amenity Program (solid black, no overlay) */}
+      {/* HERO — solid black, white type, stacked CTAs on mobile */}
       <section className="bg-black text-white">
         <div className="cc-container py-24 md:py-32 text-center">
           <h1 className="font-serif tracking-wide text-white">
-  Carriage Concierge <span className="cc-accent">Powered by BabyQuip</span>
-</h1>
+            Family Comfort, Delivered.
+          </h1>
           <p className="mt-6 text-base md:text-xl text-neutral-300 max-w-2xl mx-auto">
-            A seamless amenity for hotels: premium baby gear, delivered, set up, and removed —
+            A luxury amenity for hotels: premium baby gear, delivered, set up, and removed —
             <span className="cc-accent"> with zero operational burden</span> on your staff.
+            <br className="hidden sm:block" />
+            <span className="text-neutral-400 text-sm block mt-3">
+              Powered discreetly by a trusted logistics engine from <span className="cc-accent">BabyQuip</span>.
+            </span>
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/partner" variant="primary">Explore Partnership Opportunities</Button>
-            <Button to="/how-it-works" variant="outline">How It Works</Button>
+          <div className="mt-10 grid grid-cols-1 sm:flex sm:flex-row gap-3 justify-center">
+            <Button to="/partner" variant="primary" className="w-full sm:w-auto">Explore Partnership Opportunities</Button>
+            <Button to="/how-it-works" variant="outline" className="w-full sm:w-auto">How It Works</Button>
           </div>
         </div>
       </section>
@@ -31,15 +34,15 @@ export default function Home() {
             <h3 className="font-serif text-xl">The Challenge</h3>
             <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1">
               <li>Families struggle to travel with bulky, regulated gear</li>
-              <li>Hotels avoid gear programs due to storage, sanitization, liability</li>
-              <li>Guest experience varies across cities and seasons</li>
+              <li>Storage, sanitization, liability, and training deter in-house programs</li>
+              <li>Experience varies by city and season without a unified standard</li>
             </ul>
           </Card>
           <Card>
-            <h3 className="font-serif text-xl">The Carriage Concierge Solution</h3>
+            <h3 className="font-serif text-xl">Our Hospitality-Grade Solution</h3>
             <ul className="mt-3 list-disc list-inside text-neutral-700 space-y-1">
-              <li>Curated, premium gear delivered on demand</li>
-              <li>Sanitized, safety-checked, and concierge-installed</li>
+              <li>Curated premium gear aligned to your brand</li>
+              <li>White-glove delivery, in-room setup, and retrieval</li>
               <li><span className="cc-accent">Zero operational burden</span> for your property</li>
             </ul>
           </Card>
@@ -51,22 +54,25 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card>
             <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 1</p>
-            <h3 className="font-serif text-xl mt-1">List the Amenity</h3>
-            <p className="mt-2 text-neutral-700">We create your branded amenity menu with gear tiers and pricing aligned to your property.</p>
+            <h3 className="font-serif text-xl mt-1">Branded Gear Menu</h3>
+            <p className="mt-2 text-neutral-700">Guests or concierge request items via your custom link.</p>
           </Card>
           <Card>
             <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 2</p>
-            <h3 className="font-serif text-xl mt-1">Guest Requests Gear</h3>
-            <p className="mt-2 text-neutral-700">Front desk or concierge submits a request, or guests book via a discreet link.</p>
+            <h3 className="font-serif text-xl mt-1">Deliver & Set Up</h3>
+            <p className="mt-2 text-neutral-700">Sanitized, safety-checked gear installed pre-arrival to your standards.</p>
           </Card>
           <Card>
             <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 3</p>
-            <h3 className="font-serif text-xl mt-1">We Deliver & Retrieve</h3>
-            <p className="mt-2 text-neutral-700">White-glove delivery, setup, and pickup. Sanitization protocols included.</p>
+            <h3 className="font-serif text-xl mt-1">Pickup & Commission</h3>
+            <p className="mt-2 text-neutral-700">We retrieve and reset post-stay; you receive a commission.</p>
           </Card>
         </div>
+        <p className="mt-6 text-center text-neutral-500 text-sm">
+          Behind the scenes, logistics are powered by <span className="cc-accent">BabyQuip</span> to ensure reliability at scale.
+        </p>
         <div className="mt-8 text-center">
-          <Button to="/partner" variant="primary">Speak with Partnerships</Button>
+          <Button to="/partner" variant="primary" className="w-full sm:w-auto">Speak with Partnerships</Button>
         </div>
       </Section>
 
@@ -75,7 +81,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card>
             <h3 className="font-serif text-xl">No Ops Burden</h3>
-            <p className="mt-2 text-neutral-700">No storage, no cleaning, no maintenance. We handle logistics end-to-end.</p>
+            <p className="mt-2 text-neutral-700">No storage, cleaning, or maintenance. We handle it end-to-end.</p>
           </Card>
           <Card>
             <h3 className="font-serif text-xl">Premium Guest Experience</h3>
@@ -104,12 +110,12 @@ export default function Home() {
       {/* FINAL CTA */}
       <Section center>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-serif text-3xl md:text-4xl">Elevate your family travel experience</h2>
+          <h2 className="font-serif text-3xl md:text-4xl">Offer a truly family-ready stay</h2>
           <p className="mt-3 text-neutral-700">
-            Offer premium family gear as a seamless amenity. We handle everything—delivery, setup, sanitization, and pickup.
+            A seamless amenity with premium gear and white-glove service—without adding workload to your team.
           </p>
           <div className="mt-6 flex justify-center">
-            <Button to="/partner" variant="primary">Request a Partnership Intro</Button>
+            <Button to="/partner" variant="primary" className="w-full sm:w-auto">Request a Partnership Intro</Button>
           </div>
           <div className="mt-6 h-px bg-[#C9A24E]/40 w-24 mx-auto" />
         </div>

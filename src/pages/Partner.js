@@ -6,7 +6,7 @@ import Input from "../components/ui/Input";
 
 export default function Partner() {
   const [form, setForm] = useState({ name:"", title:"", hotel:"", email:"", phone:"" });
-  const set = (k, v) => setForm((s) => ({ ...s, [k]: v }));
+  const set = (k, v) => setForm(s => ({ ...s, [k]: v }));
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,8 +14,8 @@ export default function Partner() {
       alert("Please provide Name, Hotel, and Email.");
       return;
     }
-    // TODO: connect to CRM / email service, then show downloadable one-pager (Phase 2)
-    alert("Thank you — our team will reach out shortly.");
+    // TODO: hook to CRM/email; optionally reveal a one-pager download link
+    alert("Thank you — our partnerships team will reach out shortly.");
     setForm({ name:"", title:"", hotel:"", email:"", phone:"" });
   }
 
@@ -36,8 +36,9 @@ export default function Partner() {
             </div>
             <Input label="Phone" value={form.phone} onChange={(e)=>set("phone", e.target.value)} />
             <div className="flex justify-center mt-2">
-              <Button as="button" type="submit" variant="primary">Submit</Button>
+              <Button as="button" type="submit" variant="primary" className="w-full sm:w-auto">Submit</Button>
             </div>
+            {/* Phase 2: Show a link to download a PDF one-pager post-submit */}
           </form>
         </Card>
       </Section>
