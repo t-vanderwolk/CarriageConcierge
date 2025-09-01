@@ -14,6 +14,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/50 to-black/30" />
 
         <div className="relative cc-container py-24 md:py-32 text-center">
+          <h1 className="font-serif tracking-wide">
+  Carriage Concierge <span className="cc-accent">Powered by BabyQuip</span>
+</h1>
           <h1 className="font-serif tracking-wide leading-tight text-4xl md:text-6xl">Luxury Hotels. Effortless Family Travel.</h1>
           <p className="mt-6 text-base md:text-xl text-neutral-300 max-w-2xl mx-auto">
             Carriage Concierge is a hotel amenity program that enables properties to offer premium family travel gear—cribs, strollers, and car seats—<span className="text-[#C9A24E]">with no operational burden</span>.
