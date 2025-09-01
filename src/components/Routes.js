@@ -6,8 +6,10 @@ import Services from "../pages/Services";
 import Contact from "../pages/Contact";
 import RequestAccess from "./RequestAccess";
 import Profile from "../pages/Profile";
-import { Section } from "./ui/Section";
-import { Button } from "./ui/Button";
+import ProfileQuestionnaire from "../pages/ProfileQuestionnaire";
+import ProfileReview from "../pages/ProfileReview";
+
+
 
 function AppRoutes() {
   return (
@@ -18,6 +20,8 @@ function AppRoutes() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/request-access" element={<RequestAccess />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/profile/questionnaire" element={<ProfileQuestionnaire />} />
+      <Route path="/profile/review" element={<ProfileReview />} />
     </Routes>
   );
 }
