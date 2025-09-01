@@ -1,5 +1,5 @@
 // src/hooks/useBasicInfo.js
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { BASIC_INFO_KEY } from "../constants";
 
 export default function useBasicInfo() {

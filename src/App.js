@@ -1,25 +1,17 @@
+// src/App.js
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import AppRoutes from "./components/Routes";
-import { ProfileStoreProvider } from "./components/store/ProfileStore";
-import { Footer } from "./components/ui/Footer";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <ProfileStoreProvider> 
-  <Navbar />
-  <AppRoutes />
-  <Footer />
-        </ProfileStoreProvider>
-      
-        
-        
-       
-     
-    </BrowserRouter>
+    <div className="min-h-screen bg-white text-black flex flex-col">
+      <Navbar />
+      <main className="flex-1">
+        <AppRoutes />
+      </main>
+      <Footer />
+    </div>
   );
 }
-
-export default App;
