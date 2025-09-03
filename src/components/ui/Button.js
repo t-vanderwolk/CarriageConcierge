@@ -1,12 +1,13 @@
 import React from "react";
 import { Link, useInRouterContext } from "react-router-dom";
 
-const base = "inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm tracking-wide transition-colors focus:outline-none";
+const base =
+  "inline-flex items-center justify-center rounded-2xl px-5 md:px-6 py-3 md:py-3.5 text-sm md:text-[15px] tracking-wide transition-colors focus:outline-none";
+
 const variants = {
-  primary: "bg-black text-white hover:bg-neutral-800",
-  outline: "bg-white text-black border border-black hover:bg-neutral-50",
-  subtle: "text-neutral-600 hover:text-black",
-  ghost:  "text-black hover:text-neutral-700",
+  primary: "bg-black text-white hover:bg-neutral-900",
+  outline: "bg-white text-black border border-neutral-900 hover:bg-neutral-50",
+  subtle:  "text-neutral-600 hover:text-black",
 };
 
 export function Button({ as="link", to, href, type="button", variant="primary", className="", children, ...props }) {

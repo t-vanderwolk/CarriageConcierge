@@ -2,51 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* optional global polish */
-
-/* ===== Carriage Concierge Brand System ===== */
+/* ===== Carriage Concierge Brand System (refined) ===== */
 @layer base {
-  :root {
-    --cc-gold: #C9A24E;      /* soft gold */
-    --cc-silver: #C0C0C0;    /* optional accent */
-    --cc-maxw: 72rem;        /* ~1152px */
-    --cc-radius: 1rem;       /* 16px */
+  :root{
+    --cc-gold:#C9A24E;
+    --cc-silver:#C0C0C0;
+    --cc-maxw:72rem;         /* ~1152px container */
+    --cc-radius:1rem;        /* 16px */
+    --cc-lh-tight:1.15;      /* luxury headline line-height */
+    --cc-lh-copy:1.65;       /* elegant reading */
+    --cc-track-wide:0.015em; /* subtle tracking for serif */
+    --cc-track-kicker:0.22em;
   }
 
-  html, body {
-    font-family: Lato, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    color: #000;
-    background: #fff;
+  html,body{
+    font-family:Lato,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    color:#000;background:#fff;
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
   }
 
-  h1, h2, h3, .font-serif {
-    font-family: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
-    letter-spacing: 0.01em;
-    color: #000;
+  h1,h2,h3,.font-serif{
+    font-family:"Playfair Display",ui-serif,Georgia,"Times New Roman",serif;
+    letter-spacing:var(--cc-track-wide);
+    color:#000;
   }
 
-  h1 { @apply text-4xl md:text-6xl leading-tight; }
-  h2 { @apply text-3xl md:text-4xl; }
-  h3 { @apply text-xl; }
+  /* Type scale tuned for hero + section titles */
+  h1{ @apply text-4xl md:text-6xl; line-height:var(--cc-lh-tight); }
+  h2{ @apply text-[28px] md:text-4xl; line-height:1.2; }
+  h3{ @apply text-xl md:text-2xl; line-height:1.25; }
 
-  p  { @apply text-neutral-700; }
-  a  { @apply underline-offset-2; }
+  p{ line-height:var(--cc-lh-copy); @apply text-[15.5px] md:text-base text-neutral-700; }
+  a{ @apply underline-offset-2; }
 }
 
 @layer components {
-  .cc-container { @apply mx-auto px-6 md:px-8; max-width: var(--cc-maxw); }
-  .cc-section  { @apply py-12; }
-  .cc-divider  { @apply border-t border-neutral-200; }
-  .cc-card     { @apply rounded-2xl border border-neutral-200 bg-white p-6; }
-  .cc-input    { @apply w-full rounded-xl border border-neutral-300 px-4 py-3 focus:outline-none focus:border-black bg-white text-black; }
-  .cc-label    { @apply block text-sm text-neutral-600 mb-2; }
-  .cc-kicker   { @apply uppercase text-[11px] tracking-[0.2em] text-neutral-500; }
-  .cc-accent   { color: var(--cc-gold); }
-  .cc-accent-line { background-color: color-mix(in srgb, var(--cc-gold) 40%, transparent); }
+  .cc-container{ @apply mx-auto px-6 md:px-8; max-width:var(--cc-maxw); }
+
+  /* Section rhythm: generous but restrained */
+  .cc-section{ @apply py-14 md:py-20; }
+  .cc-divider{ @apply border-t border-neutral-200; }
+
+  .cc-card{ @apply rounded-2xl border border-neutral-200 bg-white p-6 md:p-7; }
+
+  .cc-input{ @apply w-full rounded-xl border border-neutral-300 px-4 py-3 focus:outline-none focus:border-black bg-white text-black; }
+
+  .cc-label{ @apply block text-[13px] md:text-sm text-neutral-600 mb-2; }
+
+  .cc-kicker{
+    text-transform:uppercase;
+    letter-spacing:var(--cc-track-kicker);
+    @apply text-[11px] tracking-[0.22em] text-neutral-500;
+  }
+
+  .cc-accent{ color:var(--cc-gold); }
+  .cc-accent-line{ background-color:color-mix(in srgb, var(--cc-gold) 42%, transparent); }
 }
 
-@layer utilities {
-  .cc-muted { @apply text-neutral-500; }
+@layer utilities{
+  .cc-muted{ @apply text-neutral-500; }
+  .cc-hero-pad{ @apply py-24 md:py-36; }      /* taller hero */
+  .cc-lead{ @apply text-[17px] md:text-xl; }  /* refined lead size */
+  .cc-tight{ line-height:var(--cc-lh-tight); }
 }
-
-

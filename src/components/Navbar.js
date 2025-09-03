@@ -6,18 +6,18 @@ export default function Navbar() {
 
   return (
     <nav className="bg-black text-white border-b border-neutral-200">
-      <div className="cc-container h-16 flex items-center justify-between">
-        <Link to="/" className="font-serif text-xl tracking-wide text-white">
-          Carriage Concierge
-        </Link>
+      <div className="max-w-6xl mx-auto px-6 md:px-8 h-14 md:h-16 flex items-center justify-between">
+  <Link to="/" className="font-serif text-lg md:text-xl tracking-wide text-white">
+    Carriage Concierge <span className="text-[#C9A24E]">Powered by BabyQuip</span>
+  </Link>
+  <div className="hidden md:flex gap-5 text-[13.5px]">
+    <Link to="/about" className="hover:text-neutral-300">About</Link>
+    <Link to="/how-it-works" className="hover:text-neutral-300">How It Works</Link>
+    <Link to="/benefits" className="hover:text-neutral-300">Benefits</Link>
+    <Link to="/partner" className="hover:text-neutral-300">Partner</Link>
+  </div>
 
-        {/* Desktop */}
-        <div className="hidden md:flex gap-6 text-sm">
-          <Link to="/about" className="hover:text-neutral-300">About</Link>
-          <Link to="/how-it-works" className="hover:text-neutral-300">How It Works</Link>
-          <Link to="/benefits" className="hover:text-neutral-300">Benefits</Link>
-          <Link to="/partner" className="hover:text-neutral-300">Partner With Us</Link>
-        </div>
+  
 
         {/* Mobile toggle */}
         <button
