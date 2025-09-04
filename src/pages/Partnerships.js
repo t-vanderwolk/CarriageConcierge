@@ -1,82 +1,55 @@
-// src/pages/Partnerships.js
-import React, { useState } from "react";
-import  Section  from "../components/ui/Section";
-import  Button  from "../components/ui/Button";
-import  Card  from "../components/ui/Card";
-import Input  from "../components/ui/Input";
+import React from "react";
 
 export default function Partnerships() {
-  const [form, setForm] = useState({
-    propertyName: "",
-    brandFlag: "",
-    contactName: "",
-    title: "",
-    email: "",
-    phone: "",
-    rooms: "",
-    markets: "",
-    notes: "",
-  });
-
-  const set = (k, v) => setForm((s) => ({ ...s, [k]: v }));
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (!form.propertyName.trim() || !form.contactName.trim() || !form.email.trim()) {
-      alert("Please provide Property Name, Contact Name, and Email.");
-      return;
-    }
-    // Demo: replace with backend/CRM handoff (email, webhook, etc.)
-    console.log("Partnership inquiry:", form);
-    alert("Thank you — our partnerships team will reach out shortly.");
-    setForm({
-      propertyName: "", brandFlag: "", contactName: "", title: "",
-      email: "", phone: "", rooms: "", markets: "", notes: "",
-    });
-  }
-
   return (
-    <main className="bg-white text-black">
-      <Section title="Partnerships" center divider>
-        <Card className="max-w-3xl mx-auto">
-          <h3 className="font-serif text-xl text-center">Request a Partnership Intro</h3>
-          <p className="mt-2 text-sm cc-muted text-center">
-            We’ll coordinate a brief discovery call and a tailored amenity plan.
-          </p>
+    <div className="bg-white min-h-screen py-20 px-6">
+      <div className="max-w-2xl mx-auto">
 
-          <form onSubmit={handleSubmit} className="mt-6 grid gap-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <Input label="Property Name *" value={form.propertyName} onChange={(e) => set("propertyName", e.target.value)} />
-              <Input label="Brand / Flag" value={form.brandFlag} onChange={(e) => set("brandFlag", e.target.value)} />
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Input label="Contact Name *" value={form.contactName} onChange={(e) => set("contactName", e.target.value)} />
-              <Input label="Title" value={form.title} onChange={(e) => set("title", e.target.value)} />
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Input label="Email *" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} />
-              <Input label="Phone" value={form.phone} onChange={(e) => set("phone", e.target.value)} />
-            </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <Input label="Room Count (approx.)" value={form.rooms} onChange={(e) => set("rooms", e.target.value)} />
-              <Input label="Markets (city/state)" value={form.markets} onChange={(e) => set("markets", e.target.value)} />
-            </div>
-            <label className="block">
-              <span className="cc-label">Notes</span>
-              <textarea
-                className="cc-input min-h-[120px]"
-                placeholder="Desired timing, pilot properties, special requests…"
-                value={form.notes}
-                onChange={(e) => set("notes", e.target.value)}
-              />
-            </label>
+        <h1 className="text-4xl font-serif mb-4">Let’s Explore a Partnership</h1>
+        <p className="text-lg text-gray-700 mb-8">
+          We’d love to learn about your property and explore whether Carriage Concierge is the right fit. No pressure, no pushy sales — just a thoughtful conversation.
+        </p>
 
-            <div className="mt-3 flex justify-center">
-              <Button as="button" type="submit" variant="primary">Submit</Button>
-            </div>
-          </form>
-        </Card>
-      </Section>
-    </main>
+        <form
+          action="https://formspree.io/f/{your-form-id}" // ← replace this with your Formspree/Formsubmit endpoint
+          method="POST"
+          className="space-y-6"
+        >
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
+            <input type="text" name="name" id="name" required className="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" name="email" id="email" required className="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+          </div>
+
+          <div>
+            <label htmlFor="hotel" className="block text-sm font-medium text-gray-700">Hotel / Property Name</label>
+            <input type="text" name="hotel" id="hotel" required className="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Optional Message</label>
+            <textarea name="message" id="message" rows="4" className="mt-1 w-full border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary" />
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-yellow-600 transition"
+            >
+              Request a Pilot
+            </button>
+          </div>
+        </form>
+
+        <p className="text-sm text-gray-500 mt-6">
+          Your info stays private. We’ll reach out within 1–2 business days.
+        </p>
+
+      </div>
+    </div>
   );
 }

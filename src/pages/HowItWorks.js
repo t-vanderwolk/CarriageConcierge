@@ -1,66 +1,79 @@
-// src/pages/HowItWorks.js
 import React from "react";
 import Section from "../components/ui/Section";
-import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
+import stepsImg from "../assets/steps.jpg";
+import partnerImg from "../assets/partner.jpg";
 
 export default function HowItWorks() {
   return (
-    <main className="bg-white text-black">
-      <Section title="Simple. Seamless. Stress-Free." center divider>
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-neutral-700">
-            Carriage Concierge makes it effortless for hotels to offer premium family travel
-            solutions—without adding work for staff.
-          </p>
-        </div>
+    <div>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {/* Step 1 – Reservation */}
-          <Card>
-            <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 1</p>
-            <h3 className="font-serif text-xl mt-1">Reservation</h3>
-            <p className="mt-2 text-neutral-700">
-              Guests reserve baby gear through a dedicated booking link provided to your hotel.
-              Add the link to your website, booking confirmations, or share via front desk/concierge.
-            </p>
-          </Card>
-
-          {/* Step 2 – Delivery & Setup */}
-          <Card>
-            <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 2</p>
-            <h3 className="font-serif text-xl mt-1">Delivery & Setup</h3>
-            <p className="mt-2 text-neutral-700">
-              Gear is delivered, professionally cleaned, and set up in the guest’s room before arrival.
-              Everything is handled offsite and insured—no hotel staff involvement required.
-            </p>
-          </Card>
-
-          {/* Step 3 – Pickup & Commission */}
-          <Card>
-            <p className="uppercase text-[11px] tracking-[0.2em] text-neutral-500">Step 3</p>
-            <h3 className="font-serif text-xl mt-1">Pickup & Commission</h3>
-            <p className="mt-2 text-neutral-700">
-              After checkout, we collect the gear seamlessly. Your property receives a commission on
-              every rental—incremental revenue paired with elevated guest satisfaction.
-            </p>
-          </Card>
-        </div>
-
-        {/* Closing CTA */}
-        <div className="mt-12 max-w-3xl mx-auto text-center">
-          <h3 className="font-serif text-2xl">Hospitality Made Easy</h3>
-          <p className="mt-3 text-neutral-700">
-            Carriage Concierge is the bridge between hotels and proven logistics—packaging a guest-friendly
-            service as a polished amenity. Your team lifts no extra weight, and your guests feel truly cared for.
-          </p>
-          <div className="mt-6 flex justify-center">
-            <Button to="/partner" variant="primary" className="w-full sm:w-auto">
-              Partner With Us
-            </Button>
-          </div>
-        </div>
+      {/* 🧭 Intro Section */}
+      <Section
+        kicker="How It Works"
+        title="Your Team Stays Hands-Off. Your Guests Stay Impressed."
+        image={stepsImg}
+        imageAlt="Hotel staff with guest family"
+        imagePosition="left"
+      >
+        <p className="text-lg text-gray-700">
+          Carriage Concierge, powered by BabyQuip, makes implementation seamless. We handle everything—from guest booking to gear retrieval—while your brand earns the credit.
+        </p>
       </Section>
-    </main>
+
+      {/* 🪜 Process Timeline */}
+      <section className="bg-light py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl font-serif mb-4">Step-by-Step Simplicity</h2>
+          <p className="text-lg text-gray-600">Here’s how it works from day one of partnership to your first delighted family guest.</p>
+        </div>
+
+        <ol className="space-y-12 max-w-3xl mx-auto">
+          <li className="flex items-start gap-4">
+            <span className="text-primary font-bold text-xl">1</span>
+            <div>
+              <h3 className="font-medium text-lg">Confirm Your Partnership</h3>
+              <p className="text-gray-600">We align on your location(s), branding, and preferred gear availability.</p>
+            </div>
+          </li>
+          <li className="flex items-start gap-4">
+            <span className="text-primary font-bold text-xl">2</span>
+            <div>
+              <h3 className="font-medium text-lg">Customize Guest Messaging</h3>
+              <p className="text-gray-600">We provide copy, visuals, and digital assets for your team to deploy.</p>
+            </div>
+          </li>
+          <li className="flex items-start gap-4">
+            <span className="text-primary font-bold text-xl">3</span>
+            <div>
+              <h3 className="font-medium text-lg">Go Live</h3>
+              <p className="text-gray-600">Guests begin requesting gear via your branded touchpoints. We fulfill and deliver with white-glove service.</p>
+            </div>
+          </li>
+          <li className="flex items-start gap-4">
+            <span className="text-primary font-bold text-xl">4</span>
+            <div>
+              <h3 className="font-medium text-lg">Earn and Repeat</h3>
+              <p className="text-gray-600">You receive reporting and revenue share—no logistics required. Guests leave glowing reviews.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      {/* 💼 Reassurance + CTA */}
+      <Section
+        kicker="Join Dozens of Leading Hotels"
+        title="You Focus on Hospitality. We Handle the Rest."
+        image={partnerImg}
+        imageAlt="BabyQuip team at hotel"
+        imagePosition="right"
+      >
+        <p className="text-lg text-gray-700 mb-4">
+          Carriage Concierge is live in over 1,500 properties. The model is proven, insured, and supported by real humans. We're here to help you delight families effortlessly.
+        </p>
+        <Button text="Request a Pilot" variant="primary" link="/partnerships" />
+      </Section>
+
+    </div>
   );
 }
