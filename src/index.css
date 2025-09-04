@@ -59,11 +59,41 @@
 
   .cc-accent{ color:var(--cc-gold); }
   .cc-accent-line{ background-color:color-mix(in srgb, var(--cc-gold) 42%, transparent); }
+
+
+
+  .cc-link {
+    @apply relative inline-block;
+    padding-bottom: 2px;
+  }
+  .cc-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -2px;
+    height: 1px;
+    width: 0;
+    background: var(--cc-gold);
+    opacity: 0.7;
+    transform: translateX(-50%);
+    transition: width .25s ease;
+  }
+  .cc-link:hover::after {
+    width: 100%;
+  }
+  .cc-link--active {
+    color: var(--cc-gold);
+  }
+  .cc-link--active::after {
+    width: 100%;
+  }
 }
+
 
 @layer utilities{
   .cc-muted{ @apply text-neutral-500; }
   .cc-hero-pad{ @apply py-24 md:py-36; }      /* taller hero */
   .cc-lead{ @apply text-[17px] md:text-xl; }  /* refined lead size */
   .cc-tight{ line-height:var(--cc-lh-tight); }
+  html { scroll-behavior: smooth; }
 }

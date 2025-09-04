@@ -1,27 +1,116 @@
 // src/pages/ForHotels.js
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 
-// FAQ item component
-function FAQItem({ question, answer }) {
-  const [open, setOpen] = useState(false);
+/* ---------------- Mini In-Page Navigation (with Scrollspy) ---------------- */
+function MiniNav() {
+  const items = useMemo(
+    () => [
+      { label: "Why", href: "#why" },
+      { label: "How", href: "#how" },
+      { label: "Commercials", href: "#commercials" },
+      { label: "Ops", href: "#ops" },
+      { label: "Safeguards", href: "#safeguards" },
+      { label: "Reporting", href: "#reporting" },
+      { label: "FAQ", href: "#faq" },
+    ],
+    []
+  );
+
+  const [active, setActive] = useState(items[0].href);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    const sectionIds = items.map((i) => i.href.replace("#", ""));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const opts = {
+      // rootMargin top equals sticky nav height (~56–64px) to trigger a bit earlier
+      root: null,
+      rootMargin: "-70px 0px -60% 0px",
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+    };
+
+    const io = new IntersectionObserver((entries) => {
+      // Find the most visible section (highest intersectionRatio and isIntersecting)
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible?.target?.id) {
+        setActive(`#${visible.target.id}`);
+      }
+    }, opts);
+
+    sections.forEach((s) => io.observe(s));
+    observerRef.current = io;
+
+    return () => io.disconnect();
+  }, [items]);
+
+  // Smooth scroll with offset for sticky navbar
+  const onClick = (e, href) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const stickyOffset = 70; // adjust if your sticky bar differs
+    const y = el.getBoundingClientRect().top + window.scrollY - stickyOffset;
+
+    window.history.replaceState(null, "", href);
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
 
   return (
+    <nav className="bg-white border-b border-neutral-200 sticky top-0 z-20">
+      <div className="cc-container flex flex-wrap justify-center gap-4 py-3 text-sm md:text-base">
+        {items.map((item) => {
+          const isActive = active === item.href;
+          return (
+        <a
+  key={item.href}
+  href={item.href}
+  onClick={(e) => onClick(e, item.href)}
+  className={`cc-link transition font-medium ${
+    isActive
+      ? "cc-link--active"
+      : "text-neutral-700 hover:text-black"
+  }`}
+>
+  {item.label}
+</a>
+          );
+        })}
+      </div>
+    </nav>
+  );
+}
+
+/* ------------------------ Clickable FAQ Item (Accordion) ------------------------ */
+function FAQItem({ question, answer }) {
+  const [open, setOpen] = useState(false);
+  return (
     <Card className="cursor-pointer transition text-left">
-      <div
+      <button
+        type="button"
         onClick={() => setOpen(!open)}
-        className="flex justify-between items-center"
+        className="w-full flex justify-between items-center text-left"
+        aria-expanded={open}
       >
         <h3 className="font-serif text-lg md:text-xl">{question}</h3>
         <span className="text-[#C9A24E] text-xl">{open ? "−" : "+"}</span>
-      </div>
+      </button>
       {open && <p className="mt-3 text-neutral-700">{answer}</p>}
     </Card>
   );
 }
 
+/* ------------------------------------ Page ------------------------------------ */
 export default function ForHotels() {
   return (
     <main className="bg-white text-black">
@@ -35,14 +124,21 @@ export default function ForHotels() {
             Offer premium cribs, strollers, and car seats as an on-brand amenity —
             <span className="text-[#C9A24E]"> with zero operational burden.</span>
           </p>
-          <div className="mt-8">
+          <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <Button to="/partner" variant="primary">Request Partnership</Button>
+            <Button as="a" href="/docs/Carriage-Concierge-One-Pager.pdf" variant="outline" download>
+              Download One-Pager (PDF)
+            </Button>
           </div>
+          <div className="mt-6 h-px bg-[color:var(--cc-gold)]/40 w-24 mx-auto" />
         </div>
       </section>
 
+      {/* Mini in-page navigation */}
+      <MiniNav />
+
       {/* WHY THIS MATTERS */}
-      <Section title="Elevate Family Travel — Seamlessly" center divider>
+      <Section id="why" title="Elevate Family Travel — Seamlessly" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <h3 className="font-serif text-xl md:text-2xl">No Ops Burden</h3>
@@ -66,7 +162,7 @@ export default function ForHotels() {
       </Section>
 
       {/* HOW IT WORKS */}
-      <Section title="How It Works" center divider>
+      <Section id="how" title="How It Works" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <p className="cc-kicker">Step 1</p>
@@ -96,7 +192,7 @@ export default function ForHotels() {
       </Section>
 
       {/* COMMERCIAL MODELS */}
-      <Section title="Commercial Models" center divider>
+      <Section id="commercials" title="Commercial Models" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <h3 className="font-serif text-xl md:text-2xl">Revenue Share</h3>
@@ -119,8 +215,8 @@ export default function ForHotels() {
         </div>
       </Section>
 
-      {/* IMPLEMENTATION */}
-      <Section title="Implementation & Operations" center divider>
+      {/* IMPLEMENTATION & OPERATIONS */}
+      <Section id="ops" title="Implementation & Operations" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <h3 className="font-serif text-xl md:text-2xl">Timeline</h3>
@@ -143,8 +239,8 @@ export default function ForHotels() {
         </div>
       </Section>
 
-      {/* SAFEGUARDS */}
-      <Section title="Brand & Guest Safeguards" center divider>
+      {/* BRAND & GUEST SAFEGUARDS */}
+      <Section id="safeguards" title="Brand & Guest Safeguards" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <h3 className="font-serif text-xl md:text-2xl">Standards</h3>
@@ -167,8 +263,8 @@ export default function ForHotels() {
         </div>
       </Section>
 
-      {/* REPORTING */}
-      <Section title="Reporting & Insights" center divider>
+      {/* REPORTING & INSIGHTS */}
+      <Section id="reporting" title="Reporting & Insights" center divider>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <Card className="text-center">
             <h3 className="font-serif text-xl md:text-2xl">Usage & Mix</h3>
@@ -192,7 +288,7 @@ export default function ForHotels() {
       </Section>
 
       {/* FAQ */}
-      <Section title="Frequently Asked by Hotel Teams" center divider>
+      <Section id="faq" title="Frequently Asked by Hotel Teams" center divider>
         <div className="max-w-4xl mx-auto grid gap-6">
           <FAQItem
             question="Do we need to store inventory?"
