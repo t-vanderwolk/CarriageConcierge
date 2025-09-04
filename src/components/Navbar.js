@@ -14,6 +14,8 @@ export default function Navbar() {
     <Link to="/about" className="hover:text-neutral-300">About</Link>
     <Link to="/how-it-works" className="hover:text-neutral-300">How It Works</Link>
     <Link to="/benefits" className="hover:text-neutral-300">Benefits</Link>
+    <Link to="/for-hotels" className="hover:text-neutral-300">For Hotels</Link>
+
     <Link to="/partner" className="hover:text-neutral-300">Partner</Link>
   </div>
 
@@ -38,6 +40,7 @@ export default function Navbar() {
             <Link to="/about" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>About</Link>
             <Link to="/how-it-works" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>How It Works</Link>
             <Link to="/benefits" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>Benefits</Link>
+            <Link to="/for-hotels" className="hover:text-neutral-300">For Hotels</Link>
             <Link to="/partner" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>Partner With Us</Link>
           </div>
         </div>

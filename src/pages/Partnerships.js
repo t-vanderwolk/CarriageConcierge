@@ -1,9 +1,9 @@
 // src/pages/Partnerships.js
 import React, { useState } from "react";
-import { Section } from "../components/ui/Section";
-import { Button } from "../components/ui/Button";
-import { Card } from "../components/ui/Card";
-import { Input } from "../components/ui/Input";
+import  Section  from "../components/ui/Section";
+import  Button  from "../components/ui/Button";
+import  Card  from "../components/ui/Card";
+import Input  from "../components/ui/Input";
 
 export default function Partnerships() {
   const [form, setForm] = useState({
