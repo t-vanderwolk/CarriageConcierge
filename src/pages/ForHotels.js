@@ -5,6 +5,8 @@ import Button from "../components/ui/Button";
 import howImg from "../assets/how.jpg";
 import modelsImg from "../assets/models.jpg";
 import safetyImg from "../assets/safety.jpg";
+import Hero from "../components/Hero";
+import LogoRow from "../components/LogoRow";
 import SectionDivider from "../components/ui/SectionDivider";
 const navItems = [
   { label: "Why Now", id: "why" },
@@ -17,7 +19,8 @@ const navItems = [
 export default function ForHotels() {
   return (
     <div>
-
+<Hero />
+<LogoRow />
       {/* 🧭 Sticky Mini-Nav */}
       <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
         <ul className="flex overflow-x-auto md:justify-center gap-6 text-sm font-medium px-4 py-3 whitespace-nowrap">
