@@ -7,6 +7,7 @@ import benefitsImg from "../assets/benefits.jpg";
 import SectionDivider from "../components/ui/SectionDivider";
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
+import CTASection from "../components/CTASection";
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
           <Button text="Explore Full Benefits" variant="primary" link="/benefits" />
         </div>
       </Section>
+      <CTASection />
     </div>
   );
 }

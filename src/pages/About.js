@@ -4,6 +4,7 @@ import Button from "../components/ui/Button";
 import aboutImg from "../assets/about.jpg";
 import babyquipImg from "../assets/babyquip.jpg";
 import SectionDivider from "../components/ui/SectionDivider";
+import CTASection from "../components/CTASection";
 
 export default function About() {
   return (
@@ -48,6 +49,7 @@ export default function About() {
           <Button text="Explore How It Works" variant="primary" link="/howitworks" />
         </div>
       </Section>
+      <CTASection />
     </div>
   );
 }

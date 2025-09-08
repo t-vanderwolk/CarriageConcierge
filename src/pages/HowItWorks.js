@@ -4,6 +4,8 @@ import SectionDivider from "../components/ui/SectionDivider";
 import Button from "../components/ui/Button";
 import stepsImg from "../assets/steps.jpg";
 import partnerImg from "../assets/partner.jpg";
+import CTASection from "../components/CTASection";
+import StepDiagram from "../components/StepDiagram";
 
 export default function HowItWorks() {
   return (
@@ -26,6 +28,7 @@ export default function HowItWorks() {
       </Section>
 
       <SectionDivider showArrow />
+      <StepDiagram />
 
       {/* 🪜 Refined Step Timeline */}
       <section className="bg-gray-50 py-20 px-6">
@@ -88,7 +91,7 @@ export default function HowItWorks() {
         </ul>
         <Button text="Request a Pilot" variant="primary" link="/partnerships" />
       </Section>
-
+<CTASection />
     </div>
   );
 }

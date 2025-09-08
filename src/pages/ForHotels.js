@@ -8,6 +8,7 @@ import safetyImg from "../assets/safety.jpg";
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
 import SectionDivider from "../components/ui/SectionDivider";
+import CTASection from "../components/CTASection";
 
 const navItems = [
   { label: "Why Now", id: "why" },
@@ -162,6 +163,7 @@ export default function ForHotels() {
           </div>
         </Section>
       </Element>
+      <CTASection />
     </div>
   );
 }

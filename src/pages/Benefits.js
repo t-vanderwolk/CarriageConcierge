@@ -4,6 +4,7 @@ import benefitsBizImg from "../assets/benefits.jpg";
 import benefitsGuestImg from "../assets/benefits2.jpg";
 import Button from "../components/ui/Button";
 import SectionDivider from "../components/ui/SectionDivider";
+import CTASection from "../components/CTASection";
 
 export default function Benefits() {
   return (
@@ -98,6 +99,7 @@ export default function Benefits() {
     <Button text="Request a Pilot" variant="primary" link="/partnerships" />
   </div>
 </Section>
+<CTASection />
     </div>
   );
 }
