@@ -8,6 +8,7 @@ import safetyImg from "../assets/safety.jpg";
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
 import SectionDivider from "../components/ui/SectionDivider";
+
 const navItems = [
   { label: "Why Now", id: "why" },
   { label: "How It Works", id: "how" },
@@ -18,9 +19,10 @@ const navItems = [
 
 export default function ForHotels() {
   return (
-    <div>
-<Hero />
-<LogoRow />
+    <div className="bg-white text-gray-800">
+      <Hero />
+      <LogoRow />
+
       {/* 🧭 Sticky Mini-Nav */}
       <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">
         <ul className="flex overflow-x-auto md:justify-center gap-6 text-sm font-medium px-4 py-3 whitespace-nowrap">
@@ -42,8 +44,7 @@ export default function ForHotels() {
         </ul>
       </nav>
 
-      {/* 🎯 Content Sections */}
-
+      {/* 🟡 Section: Why Now */}
       <Element name="why">
         <Section
           kicker="Why Now"
@@ -52,81 +53,115 @@ export default function ForHotels() {
           imageAlt="Hotel family guests"
           imagePosition="left"
         >
-          <p className="text-lg text-gray-700">
-            Family travel has surged. Hotels that welcome children professionally—not just tolerate them—see higher loyalty and word-of-mouth. Carriage Concierge lets you stand out with no added lift.
+          <p className="text-lg leading-relaxed text-gray-700">
+            Modern families represent one of the fastest-growing luxury travel segments. While most hotels still treat child guests as an afterthought, forward-looking properties are actively curating offerings to welcome them professionally and graciously.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700 mt-4">
+            Carriage Concierge positions your property as thoughtful, contemporary, and deeply hospitable—without increasing operational burden.
           </p>
         </Section>
       </Element>
-<SectionDivider />
 
+      <SectionDivider showArrow />
+
+      {/* 🟡 Section: How It Works */}
       <Element name="how">
         <Section
           kicker="How It Works"
-          title="We Do the Heavy Lifting — You Get the Credit"
+          title="Seamless Service. Total Brand Alignment."
           image={modelsImg}
           imageAlt="Concierge gear delivery"
           imagePosition="right"
         >
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-            <li>Guests request gear during booking or check-in</li>
-            <li>BabyQuip fulfills, delivers, and picks up — 100% white-labeled</li>
-            <li>Your brand appears generous, family-ready, and operationally smooth</li>
-          </ul>
+          <p className="text-lg leading-relaxed text-gray-700">
+            Your team remains hands-off. Guests request baby gear at booking or check-in; our white-labeled fulfillment network delivers, assembles, and retrieves—all under your brand name.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700 mt-4">
+            Each touchpoint feels tailored to your property’s tone and standards. Concierge scripts, service materials, and reporting are all branded and refined to suit your style of luxury.
+          </p>
         </Section>
       </Element>
-<SectionDivider />
 
+      <SectionDivider />
+
+      {/* 🟡 Section: Commercial Models */}
       <Element name="models">
         <Section
           kicker="Commercial Models"
-          title="Simple, Profitable, Zero-Risk"
+          title="Simple. Profitable. Risk-Free."
           image={safetyImg}
           imageAlt="Revenue share discussion"
           imagePosition="left"
         >
-          <p className="text-lg text-gray-700">
-            Choose a revenue-share model or opt-in pilot. All logistics, liability, and customer service are handled by BabyQuip. You simply say “yes.”
-          </p>
+          <ul className="text-base list-disc list-inside text-gray-700 space-y-4">
+            <li>
+              <strong>Revenue share:</strong> Earn a percentage from every transaction—no fees, setup costs, or contracts required.
+            </li>
+            <li>
+              <strong>Pilot option:</strong> Begin with one flagship property to assess fit before expanding portfolio-wide.
+            </li>
+            <li>
+              <strong>Fully managed:</strong> We handle the gear, delivery, fulfillment, and guest experience—your team stays focused.
+            </li>
+          </ul>
         </Section>
       </Element>
-<SectionDivider />
 
+      <SectionDivider />
+
+      {/* 🟡 Section: Safety */}
       <Element name="safety">
         <Section
           kicker="Safety & Trust"
-          title="Insured. Sanitized. Certified Pros."
+          title="Certified. Insured. Parent-Tested."
           image={safetyImg}
           imageAlt="Safety protocol and equipment"
           imagePosition="right"
         >
-          <ul className="text-lg list-disc list-inside text-gray-700 space-y-2">
-            <li>All gear is safety-checked, sanitized, and quality-controlled</li>
-            <li>Vetted providers with background checks and insurance</li>
-            <li>Trusted by over 35,000 5-star families and 1,500+ hotel properties</li>
+          <ul className="text-base list-disc list-inside text-gray-700 space-y-4">
+            <li>
+              <strong>Sanitized and safe:</strong> All gear meets rigorous cleaning and inspection standards before and after each use.
+            </li>
+            <li>
+              <strong>Certified providers:</strong> Each partner undergoes vetting, background checks, and training.
+            </li>
+            <li>
+              <strong>Fully insured service:</strong> Guests and properties are protected at every step.
+            </li>
           </ul>
         </Section>
       </Element>
-<SectionDivider />
 
+      <SectionDivider />
+
+      {/* 🟡 Section: FAQ */}
       <Element name="faq">
         <Section
-          kicker="FAQ"
+          kicker="Frequently Asked"
           title="Answers to Common GM Questions"
           image={null}
           imageAlt=""
           imagePosition="left"
         >
-          <ul className="space-y-4 text-gray-700 text-lg">
-            <li><strong>Q:</strong> Can we pilot this in one location?<br/><strong>A:</strong> Yes, most hotels begin with a flagship property to validate fit.</li>
-            <li><strong>Q:</strong> How fast can we go live?<br/><strong>A:</strong> Most hotels launch within 2 weeks after alignment.</li>
-            <li><strong>Q:</strong> Who handles guest support?<br/><strong>A:</strong> 100% handled by BabyQuip — from gear requests to follow-up.</li>
+          <ul className="space-y-6 text-gray-700 text-lg leading-relaxed">
+            <li>
+              <strong>Q:</strong> Can we pilot this in one location?<br />
+              <strong>A:</strong> Yes. Most partners begin with a flagship property and expand after validating results.
+            </li>
+            <li>
+              <strong>Q:</strong> How soon can we go live?<br />
+              <strong>A:</strong> Most implementations are completed in under two weeks—no internal training needed.
+            </li>
+            <li>
+              <strong>Q:</strong> Who supports the guest?<br />
+              <strong>A:</strong> Carriage Concierge, powered by BabyQuip, handles all guest interactions—seamlessly and professionally.
+            </li>
           </ul>
-          <div className="mt-6">
-            <Button text="Request a Call" variant="primary" link="/partnerships" />
+          <div className="mt-8">
+            <Button text="Request a Pilot" variant="primary" link="/partnerships" />
           </div>
         </Section>
       </Element>
-
     </div>
   );
 }

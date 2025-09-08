@@ -23,8 +23,9 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
           className="mt-4 md:mt-5 text-base md:text-lg text-neutral-600"
         >
-          A discreet, turn-key amenity for luxury hotels—no added work for your team.
-        </motion.p>
+      <h1 className="text-xl md:text-2xl text-gray-700 opacity-90 max-w-xl mx-auto">   
+  Delight Guests. Drive Revenue. No Extra Work.
+</h1>      </motion.p>
       </div>
     </section>
   );

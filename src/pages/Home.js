@@ -7,34 +7,14 @@ import benefitsImg from "../assets/benefits.jpg";
 import SectionDivider from "../components/ui/SectionDivider";
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
+
 export default function Home() {
   return (
     <div className="bg-white text-gray-800">
-    <Hero />
-    <LogoRow />
+      <Hero />
+      <LogoRow />
 
-      {/* 🖼 Hero Section */}
-{/* <section className="relative bg-white text-center py-24 md:py-28 px-6 text-gray-900 overflow-hidden border-b border-primary">
-
-  {/* ✨ Fade Animation Wrapper */}
-  {/* <div className="animate-fade-up max-w-3xl mx-auto">
-    <h1 className="text-4xl md:text-5xl font-light font-serif leading-tight mb-4">
-      Carriage <span className="font-script text-primary">Concierge</span>
-    </h1>
-
-    <p className="text-lg md:text-xl text-gray-700 opacity-90 max-w-xl mx-auto">
-      A luxury amenity for family-ready hospitality. Powered by BabyQuip.
-    </p>  */}
-{/* 
-    <div className="mt-6">
-      <Button text="Request a Pilot" variant="primary" />
-    </div>
-
-    <p className="text-sm mt-4 text-gray-500">Powered by BabyQuip</p>
-  </div>
-
-</section> */}
-      {/* 💼 Challenge + Solution */}
+      {/* 🟡 Section: Challenge */}
       <Section
         kicker="The Opportunity"
         title="Today's Guests Expect More — Families Included"
@@ -43,10 +23,13 @@ export default function Home() {
         imagePosition="left"
       >
         <p className="text-lg leading-relaxed text-gray-700">
-          Families are traveling more than ever, but most hotels aren’t equipped to welcome little guests with the same care. Carriage Concierge turns that challenge into a differentiator — with no added burden for your team.
+          Families are traveling more than ever, yet most hotels remain underprepared to serve their unique needs. Carriage Concierge helps your property transform that gap into a premium experience—without increasing your team’s workload.
         </p>
       </Section>
-<SectionDivider />
+
+      <SectionDivider showArrow />
+
+      {/* 🟡 Section: The Solution */}
       <Section
         kicker="The Solution"
         title="A Fully Managed, White-Glove Amenity Program"
@@ -55,32 +38,32 @@ export default function Home() {
         imagePosition="right"
       >
         <p className="text-lg leading-relaxed text-gray-700">
-          We handle everything — from curated inventory and secure delivery to concierge-level guest support. All under your brand’s hospitality umbrella.
+          We handle everything—from curated gear inventory and white-labeled fulfillment to end-to-end concierge support. Your brand delivers the magic; we power it behind the scenes.
         </p>
         <p className="text-lg leading-relaxed text-gray-700 mt-4">
-          Our trusted partner BabyQuip is the engine. You’re the face of exceptional service.
+          No new processes. No staff disruption. Just a thoughtful, family-focused touchpoint that elevates your property's reputation.
         </p>
       </Section>
-<SectionDivider />
 
-      {/* ⭐ Benefits Teaser */}
+      <SectionDivider showArrow />
+
+      {/* 🟡 Section: Benefits Teaser */}
       <Section
         kicker="Why Hotels Love It"
-        title="Revenue, Satisfaction, and Peace of Mind"
+        title="Revenue. Reputation. Zero Operational Burden."
         image={benefitsImg}
         imageAlt="Luxury hotel guest using baby gear"
         imagePosition="left"
       >
-        <ul className="text-lg leading-relaxed list-disc list-inside text-gray-700 space-y-3">
-          <li>💰 Share in every guest transaction — no overhead required</li>
-          <li>🏆 Differentiate your brand in reviews and RFPs</li>
-          <li>🛠 Fully managed by insured, vetted professionals</li>
+        <ul className="text-base leading-relaxed list-disc list-inside text-gray-700 space-y-4">
+          <li>Share in every qualified guest transaction—no overhead or logistics required</li>
+          <li>Enhance family-friendliness in reviews, OTAs, and corporate travel bids</li>
+          <li>Maintain brand alignment with fully managed, insured, and professional service</li>
         </ul>
         <div className="mt-8">
-          <Button text="View Full Benefits" variant="outline" link="/benefits" />
+          <Button text="Explore Full Benefits" variant="primary" link="/benefits" />
         </div>
       </Section>
-
     </div>
   );
 }
