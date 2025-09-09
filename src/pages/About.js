@@ -5,11 +5,12 @@ import aboutImg from "../assets/about.jpg";
 import babyquipImg from "../assets/babyquip.jpg";
 import SectionDivider from "../components/ui/SectionDivider";
 import CTASection from "../components/CTASection";
+import Hero from "../components/Hero";
 
 export default function About() {
   return (
     <div className="bg-white text-gray-800">
-
+<Hero pageTitle="About" />
       {/* 🏛 Mission & Purpose */}
       <Section
         kicker="About Carriage Concierge"

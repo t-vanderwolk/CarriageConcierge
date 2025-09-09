@@ -6,11 +6,12 @@ import benefitHotelImg from "../assets/hotelbenefits.png"
 import Button from "../components/ui/Button";
 import SectionDivider from "../components/ui/SectionDivider";
 import CTASection from "../components/CTASection";
+import Hero from "../components/Hero";
 
 export default function Benefits() {
   return (
     <div className="bg-white text-gray-800">
-
+<Hero pageTitle="Benefits" />
       {/* 🏢 Business Benefits */}
       <Section
         kicker="For Owners & Operators"

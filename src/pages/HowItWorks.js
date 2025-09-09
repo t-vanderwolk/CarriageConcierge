@@ -6,11 +6,12 @@ import stepsImg from "../assets/steps.jpg";
 import partnerImg from "../assets/partner.jpg";
 import CTASection from "../components/CTASection";
 import StepDiagram from "../components/StepDiagram";
+import Hero from "../components/Hero";
 
 export default function HowItWorks() {
   return (
     <div className="bg-white text-gray-800">
-
+<Hero pageTitle="How It Works" />
       {/* 🛎 Intro Section */}
       <Section
         kicker="How It Works"

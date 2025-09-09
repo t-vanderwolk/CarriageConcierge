@@ -23,7 +23,7 @@ const navItems = [
 export default function ForHotels() {
   return (
     <div className="bg-white text-gray-800">
-      <Hero />
+      <Hero pageTitle="For Hotels" />
       <LogoRow />
 
       {/* 🧭 Sticky Mini-Nav */}
