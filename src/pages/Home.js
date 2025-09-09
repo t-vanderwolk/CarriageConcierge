@@ -62,7 +62,7 @@ export default function Home() {
           <li>Maintain brand alignment with fully managed, insured, and professional service</li>
         </ul>
         <div className="mt-8">
-          <Button text="Explore Full Benefits" variant="primary" link="/benefits" />
+          {/* <Button text="Explore Full Benefits" variant="primary" link="/benefits" /> */}
         </div>
       </Section>
       <CTASection />

@@ -2,7 +2,8 @@ import React from "react";
 import CTASection from "../components/CTASection";
 import { motion } from "framer-motion";
 import Hero from "../components/Hero";
-
+import Section from "../components/ui/Section";
+import Button from "../components/ui/Button";
 export default function Partnerships() {
   return (
     <div className="bg-white min-h-screen py-20 px-6">
@@ -90,19 +91,18 @@ export default function Partnerships() {
             </button>
           </div>
         </form>
-
+<Button text="Submit" variant="primary"  />
         <p className="text-sm text-gray-500 mt-6">
           Your info stays private. We’ll reach out within 1–2 business days.
         </p>
+        {/* <Button /> */}
       </motion.div>
 
+  
       {/* 🧾 Optional CTA Section */}
-      <CTASection
-        title="Not Ready to Connect Yet?"
-        subtitle="Download a one-pager or share with your brand leadership team."
-        buttonText="Download Overview"
-        buttonLink="/overview.pdf"
-      />
-    </div>
-  );
-}
+     
+    
+    <Section />
+    <CTASection /> 
+  </div>
+  )}

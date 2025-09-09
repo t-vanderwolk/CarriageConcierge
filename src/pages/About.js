@@ -46,9 +46,9 @@ export default function About() {
         <p className="text-lg leading-relaxed text-gray-700 mt-4">
           Carriage Concierge overlays this proven logistics engine with your branding, tone, and guest experience standards—ensuring every family touchpoint feels like an extension of your hotel’s excellence.
         </p>
-        <div className="mt-8">
+        {/* <div className="mt-8">
           <Button text="Explore How It Works" variant="primary" link="/howitworks" />
-        </div>
+        </div> */}
       </Section>
       <CTASection />
     </div>

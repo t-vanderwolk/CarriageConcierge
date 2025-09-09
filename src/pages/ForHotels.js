@@ -160,9 +160,9 @@ export default function ForHotels() {
               <strong>A:</strong> Carriage Concierge, powered by BabyQuip, handles all guest interactions—seamlessly and professionally.
             </li>
           </ul>
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <Button text="Request a Pilot" variant="primary" link="/partnerships" />
-          </div>
+          </div> */}
         </Section>
       </Element>
       <CTASection />

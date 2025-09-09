@@ -3,6 +3,7 @@ import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
 import Card from "../components/ui/Card";
 import Input from "../components/ui/Input";
+// import CTASection from "../components/CTASection";
 
 export default function Partner() {
   const [form, setForm] = useState({ name:"", title:"", hotel:"", email:"", phone:"" });
@@ -35,13 +36,14 @@ export default function Partner() {
               <Input label="Email *" type="email" value={form.email} onChange={(e)=>set("email", e.target.value)} />
             </div>
             <Input label="Phone" value={form.phone} onChange={(e)=>set("phone", e.target.value)} />
-            <div className="flex justify-center mt-2">
+            {/* <div className="flex justify-center mt-2">
               <Button as="button" type="submit" variant="primary" className="w-full sm:w-auto">Submit</Button>
-            </div>
+            </div> */}
             {/* Phase 2: Show a link to download a PDF one-pager post-submit */}
           </form>
         </Card>
       </Section>
+      {/* <CTASection /> */}
     </main>
   );
 }

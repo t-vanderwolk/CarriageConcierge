@@ -97,9 +97,9 @@ export default function Benefits() {
       <strong>Future-proof your offering</strong> — Position your hotel as a forward-thinking, inclusive destination in an increasingly family-conscious luxury market.
     </li>
   </ul>
-  <div className="mt-8">
+  {/* <div className="mt-8">
     <Button text="Request a Pilot" variant="primary" link="/partnerships" />
-  </div>
+  </div> */}
 </Section>
 <CTASection />
     </div>

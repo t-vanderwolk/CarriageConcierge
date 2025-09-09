@@ -90,7 +90,7 @@ export default function HowItWorks() {
           <li>No operational lift—our team manages fulfillment and support</li>
           <li>Immediate guest value, long-term satisfaction impact</li>
         </ul>
-        <Button text="Request a Pilot" variant="primary" link="/partnerships" />
+        {/* <Button text="Request a Pilot" variant="primary" link="/partnerships" /> */}
       </Section>
 <CTASection />
     </div>
