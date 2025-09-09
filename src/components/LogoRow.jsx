@@ -9,48 +9,48 @@ const logos = [
   { src: "/images/partners/veer.png", alt: "VEER" },
   { src: "/images/partners/bumbleride.png", alt: "Bumbleride" },
   { src: "/images/partners/doona.png", alt: "Doona" },
-//   { src: "/images/partners/graco.png", alt: "Graco" },
+  { src: "/images/partners/graco.png", alt: "Graco" },
   { src: "/images/partners/maxi-cosi.png", alt: "Maxi-Cosi" },
   { src: "/images/partners/stokke.png", alt: "Stokke" },
   { src: "/images/partners/thule.png", alt: "Thule" },
-//   { src: "/images/partners/clek.png", alt: "Clek" },
-//   { src: "/images/partners/chicco.png", alt: "Chicco" },
-// { src: "/images/partners/mockingbird.png", alt: "Mockingbird" },
-
-//   { src: "/images/partners/ergobaby.png", alt: "Ergobaby" },
+  { src: "/images/partners/clek.png", alt: "Clek" },
+  { src: "/images/partners/chicco.png", alt: "Chicco" },
+  { src: "/images/partners/mockingbird.png", alt: "Mockingbird" },
+  { src: "/images/partners/ergobaby.png", alt: "Ergobaby" },
   { src: "/images/partners/babybjorn.png", alt: "BabyBjorn" },
-//   { src: "/images/partners/evenflo.png", alt: "Evenflo" },
+  { src: "/images/partners/evenflo.png", alt: "Evenflo" },
   { src: "/images/partners/joie.png", alt: "Joie" },
-//   { src: "/images/partners/happiestbaby.png", alt: "HappiestBaby" },
+  { src: "/images/partners/happiestbaby.png", alt: "HappiestBaby" },
   { src: "/images/partners/babyjogger.png", alt: "BabyJogger" },
   { src: "/images/partners/wonderfold.png", alt: "Wonderfold" },
   { src: "/images/partners/orbitbaby.png", alt: "OrbitBaby" },
   { src: "/images/partners/bob.png", alt: "BOB" },
-//   { src: "/images/partners/keenz.png", alt: "Keenz" },
+  { src: "/images/partners/keenz.png", alt: "Keenz" },
   { src: "/images/partners/joolz.png", alt: "Joolz" },
-//   { src: "/images/partners/pegperego.png", alt: "PegPerego" },
+  { src: "/images/partners/pegperego.png", alt: "PegPerego" },
   { src: "/images/partners/babyzen.png", alt: "Babyzen" },
-
-
-
-
-
-
 ];
 
 export default function LogoRow() {
   return (
-    <section className="px-6 pb-10">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 opacity-80">
-          {logos.map((l) => (
-            <img
-              key={l.alt}
-              src={l.src}
-              alt={l.alt}
-              className="h-7 md:h-8 object-contain grayscale hover:grayscale-0 transition"
-              loading="lazy"
-            />
+    <section className="bg-white py-10 px-6 border-t border-b border-gray-100">
+      <div className="text-center mb-6">
+        <h2 className="text-lg font-medium text-gray-600 tracking-wide uppercase">
+          Trusted by Leading Brands
+        </h2>
+      </div>
+
+      <div className="overflow-x-auto scrollbar-hide">
+        <div className="flex space-x-8 md:space-x-12 px-4 py-2 snap-x snap-mandatory">
+          {logos.map((logo) => (
+            <div key={logo.alt} className="snap-center flex-shrink-0">
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="h-7 md:h-8 object-contain grayscale hover:grayscale-0 transition duration-300"
+                loading="lazy"
+              />
+            </div>
           ))}
         </div>
       </div>
