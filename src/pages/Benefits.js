@@ -11,7 +11,7 @@ import Hero from "../components/Hero";
 export default function Benefits() {
   return (
     <div className="bg-white text-gray-800">
-<Hero pageTitle="Benefits" />
+<Hero subtitle="Clear gains. Zero friction." pageTitle="Benefits" />
       {/* 🏢 Business Benefits */}
       <Section
         kicker="For Owners & Operators"

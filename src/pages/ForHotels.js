@@ -8,7 +8,7 @@ import businessImg from "../assets/hotelbenefits.png"
 import safetyImg from "../assets/safety.jpg";
 import whyImg from "../assets/with.png"
 import Hero from "../components/Hero";
-import LogoRow from "../components/LogoRow";
+// import LogoRow from "../components/LogoRow";
 import SectionDivider from "../components/ui/SectionDivider";
 import CTASection from "../components/CTASection";
 
@@ -23,8 +23,8 @@ const navItems = [
 export default function ForHotels() {
   return (
     <div className="bg-white text-gray-800">
-      <Hero pageTitle="For Hotels" />
-      <LogoRow />
+      <Hero subtitle="Effortless to launch. Powerful to offer." pageTitle="For Hotels" />
+      {/* <LogoRow /> */}
 
       {/* 🧭 Sticky Mini-Nav */}
       <nav className="sticky top-0 z-10 bg-white border-b border-gray-200 shadow-sm">

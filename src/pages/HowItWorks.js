@@ -11,7 +11,7 @@ import Hero from "../components/Hero";
 export default function HowItWorks() {
   return (
     <div className="bg-white text-gray-800">
-<Hero pageTitle="How It Works" />
+<Hero subtitle="You stay hands-off. We handle the rest." pageTitle="How It Works" />
       {/* 🛎 Intro Section */}
       <Section
         kicker="How It Works"

@@ -1,48 +1,81 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import logoImg from "../assets/heroLogo.png"; // Optional if you still want logo
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const navItems = [
+    { label: "About", to: "/about" },
+    { label: "How It Works", to: "/how-it-works" },
+    { label: "Benefits", to: "/benefits" },
+    { label: "For Hotels", to: "/for-hotels" },
+    { label: "Partner With Us", to: "/partner" },
+  ];
 
   return (
-    <nav className="bg-black text-white border-b border-neutral-200">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 h-14 md:h-16 flex items-center justify-between">
-  <Link to="/" className="font-serif text-lg md:text-xl tracking-wide text-white">
-    Carriage Concierge <span className="text-[#C9A24E]">Powered by BabyQuip</span>
-  </Link>
-  <div className="hidden md:flex gap-5 text-[13.5px]">
-    <Link to="/about" className="hover:text-neutral-300">About</Link>
-    <Link to="/how-it-works" className="hover:text-neutral-300">How It Works</Link>
-    <Link to="/benefits" className="hover:text-neutral-300">Benefits</Link>
-    <Link to="/for-hotels" className="hover:text-neutral-300">For Hotels</Link>
+    <nav className="bg-white sticky top-0 z-30 border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
 
-    <Link to="/partner" className="hover:text-neutral-300">Partner</Link>
-  </div>
+        {/* 🔰 Branded Name */}
+        <Link to="/" className="flex items-center space-x-3 group">
+          {/* Optional logo */}
+          <img src={logoImg} alt="Logo" className="h-8 md:h-10" />
+          <span className="text-2xl md:text-3xl font-serif text-gray-900 tracking-tight leading-none">
+            Carriage{" "}
+            <span className="text-primary font-cursive">Concierge</span>
+          </span>
+        </Link>
 
-  
+        {/* 🌐 Desktop Nav */}
+        <div className="hidden md:flex gap-10 text-base">
+          {navItems.map(({ label, to }) => {
+            const isActive = location.pathname === to;
+            return (
+              <Link
+                key={label}
+                to={to}
+                className={`relative transition-colors ${
+                  isActive ? "text-gray-900 font-semibold" : "text-gray-700 hover:text-gray-900"
+                }`}
+              >
+                {label}
+                <span
+                  className={`absolute bottom-0 left-0 h-[1px] bg-primary transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            );
+          })}
+        </div>
 
-        {/* Mobile toggle */}
+        {/* 📱 Mobile Toggle */}
         <button
-          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 hover:bg-neutral-900"
-          aria-label="Toggle navigation"
-          onClick={() => setOpen(s => !s)}
+          className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded hover:bg-gray-100 transition-colors"
+          aria-label="Toggle menu"
+          onClick={() => setOpen(o => !o)}
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* 📱 Mobile Menu */}
       {open && (
-        <div className="md:hidden border-t border-neutral-800 bg-black">
-          <div className="cc-container py-3 grid gap-2 text-sm">
-            <Link to="/about" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>About</Link>
-            <Link to="/how-it-works" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>How It Works</Link>
-            <Link to="/benefits" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>Benefits</Link>
-            <Link to="/for-hotels" className="hover:text-neutral-300">For Hotels</Link>
-            <Link to="/partner" className="py-2 text-white/90 hover:text-white" onClick={() => setOpen(false)}>Partner With Us</Link>
-          </div>
+        <div className="md:hidden fixed inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-lg z-40">
+          {navItems.map(({ label, to }) => (
+            <Link
+              key={label}
+              to={to}
+              className="text-gray-800 hover:text-gray-900"
+              onClick={() => setOpen(false)}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
       )}
     </nav>

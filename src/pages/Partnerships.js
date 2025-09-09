@@ -6,7 +6,7 @@ import Hero from "../components/Hero";
 export default function Partnerships() {
   return (
     <div className="bg-white min-h-screen py-20 px-6">
-      <Hero pageTitle="Partnership" />
+     <Hero subtitle="Start with a conversation." pageTitle="Partnerships" />
       {/* 🎯 Hero Title Section */}
       <section className="text-center mb-16 max-w-3xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-serif font-light text-gray-900">
