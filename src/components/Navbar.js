@@ -19,14 +19,16 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
 
         {/* 🔰 Branded Name */}
-        <Link to="/" className="flex items-center space-x-3 group">
-          {/* Optional logo */}
-          <img src={logoImg} alt="Logo" className="h-8 md:h-10" />
-          <span className="text-2xl md:text-3xl font-serif text-gray-900 tracking-tight leading-none">
-            Carriage{" "}
-            <span className="text-primary font-cursive">Concierge</span>
-          </span>
-        </Link>
+<Link to="/" className="flex flex-col items-center space-y-px -ml-2 md:-ml-4 group">
+  <img
+    src={logoImg}
+    alt="Logo"
+    className="h-7 md:h-9 transition-transform duration-300 group-hover:scale-105"
+  />
+  <span className="text-base md:text-lg font-serif text-gray-900 tracking-tight leading-tight text-center transition-colors duration-300 group-hover:text-primary">
+    Carriage <span className="font-cursive">Concierge</span>
+  </span>
+</Link>
 
         {/* 🌐 Desktop Nav */}
         <div className="hidden md:flex gap-10 text-base">

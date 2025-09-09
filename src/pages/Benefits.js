@@ -67,8 +67,7 @@ export default function Benefits() {
           </li>
         </ul>
         <div className="mt-8">
-          <Button text="See How It Works" variant="primary" link="/howitworks" />
-        </div>
+<Button text="See How It Works" variant="primary" link="/how-it-works" />        </div>
       </Section>
       <SectionDivider showArrow />
 
