@@ -3,7 +3,7 @@ import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
 import heroImg from "../assets/hero.jpg";
 import valueImg from "../assets/value.jpg";
-import benefitsImg from "../assets/benefits.jpg";
+import noworkImg from "../assets/nowork.png";
 import SectionDivider from "../components/ui/SectionDivider";
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
@@ -52,7 +52,7 @@ export default function Home() {
       <Section
         kicker="Why Hotels Love It"
         title="Revenue. Reputation. Zero Operational Burden."
-        image={benefitsImg}
+        image={noworkImg}
         imageAlt="Luxury hotel guest using baby gear"
         imagePosition="left"
       >

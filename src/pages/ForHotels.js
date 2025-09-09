@@ -4,7 +4,9 @@ import Section from "../components/ui/Section";
 import Button from "../components/ui/Button";
 import howImg from "../assets/how.jpg";
 import modelsImg from "../assets/models.jpg";
+import businessImg from "../assets/hotelbenefits.png"
 import safetyImg from "../assets/safety.jpg";
+import whyImg from "../assets/with.png"
 import Hero from "../components/Hero";
 import LogoRow from "../components/LogoRow";
 import SectionDivider from "../components/ui/SectionDivider";
@@ -50,7 +52,7 @@ export default function ForHotels() {
         <Section
           kicker="Why Now"
           title="Your Competitors Are Already Positioning for Families"
-          image={howImg}
+          image={whyImg}
           imageAlt="Hotel family guests"
           imagePosition="left"
         >
@@ -70,7 +72,7 @@ export default function ForHotels() {
         <Section
           kicker="How It Works"
           title="Seamless Service. Total Brand Alignment."
-          image={modelsImg}
+          image={howImg}
           imageAlt="Concierge gear delivery"
           imagePosition="right"
         >
@@ -90,7 +92,7 @@ export default function ForHotels() {
         <Section
           kicker="Commercial Models"
           title="Simple. Profitable. Risk-Free."
-          image={safetyImg}
+          image={businessImg}
           imageAlt="Revenue share discussion"
           imagePosition="left"
         >
@@ -140,8 +142,8 @@ export default function ForHotels() {
         <Section
           kicker="Frequently Asked"
           title="Answers to Common GM Questions"
-          image={null}
-          imageAlt=""
+          image={modelsImg}
+          imageAlt="models image"
           imagePosition="left"
         >
           <ul className="space-y-6 text-gray-700 text-lg leading-relaxed">

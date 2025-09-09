@@ -2,6 +2,7 @@ import React from "react";
 import Section from "../components/ui/Section";
 import benefitsBizImg from "../assets/benefits.jpg";
 import benefitsGuestImg from "../assets/benefits2.jpg";
+import benefitHotelImg from "../assets/hotelbenefits.png"
 import Button from "../components/ui/Button";
 import SectionDivider from "../components/ui/SectionDivider";
 import CTASection from "../components/CTASection";
@@ -14,7 +15,7 @@ export default function Benefits() {
       <Section
         kicker="For Owners & Operators"
         title="Drive Revenue. Reduce Friction. Elevate Perception."
-        image={benefitsBizImg}
+        image={benefitHotelImg}
         imageAlt="Hotel concierge handing gear to guest"
         imagePosition="left"
       >
