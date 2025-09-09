@@ -1,7 +1,6 @@
 // src/components/Hero.jsx
 import { motion } from "framer-motion";
 import logoImg from "../assets/heroLogo.png";
-import SectionDivider from "./ui/SectionDivider";
 
 export default function Hero({
   subtitle = "Delight Guests. Drive Revenue. No Extra Work.",
@@ -54,7 +53,6 @@ export default function Hero({
           {subtitle}
         </motion.h2>
 
-        <SectionDivider />
       </div>
     </section>
   );
