@@ -28,7 +28,7 @@ export default function Home() {
         </p>
       </Section>
 
-      <SectionDivider showArrow />
+      <SectionDivider />
 
       {/* 🟡 Section: The Solution */}
       <Section
@@ -46,7 +46,7 @@ export default function Home() {
         </p>
       </Section>
 
-      <SectionDivider showArrow />
+      <SectionDivider/>
 
       {/* 🟡 Section: Benefits Teaser */}
       <Section

@@ -12,7 +12,7 @@ export default function CTASection({ title, subtitle, buttonText, buttonLink }) 
         <p className="text-base md:text-lg text-gray-700 mb-6">
           {subtitle || "Partner with Carriage Concierge and deliver more — with less effort."}
         </p>
-        <Button text={buttonText || "Request a Pilot"} variant="primary" link={buttonLink || "/partnerships"} />
+        <Button text={buttonText || "Request a Pilot"} variant="primary" link={buttonLink || "/partner"} />
       </div>
     </section>
   );

@@ -52,7 +52,19 @@ export default function Hero({
         >
           {subtitle}
         </motion.h2>
-
+<motion.div
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7, duration: 0.6 }}
+  className="mt-6"
+>
+  <a
+    href="/partner"
+    className="inline-block bg-[#C9A24E] text-white text-sm md:text-base font-medium px-5 md:px-6 py-2.5 md:py-3 rounded-md hover:bg-yellow-600 transition-all"
+  >
+    Request a Pilot
+  </a>
+</motion.div>
       </div>
     </section>
   );
