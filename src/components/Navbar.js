@@ -8,8 +8,9 @@ export default function Navbar() {
 
   const navItems = [
     { label: "About", to: "/about" },
+     { label: "Benefits", to: "/benefits" },
     { label: "How It Works", to: "/how-it-works" },
-    { label: "Benefits", to: "/benefits" },
+   
     { label: "For Hotels", to: "/for-hotels" },
     { label: "Partner With Us", to: "/partner" },
   ];
