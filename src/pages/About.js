@@ -1,55 +1,52 @@
 import React from "react";
-import Section from "../components/ui/Section";
-import Button from "../components/ui/Button";
-import aboutImg from "../assets/about.jpg";
-import babyquipImg from "../assets/babyquip.jpg";
-import SectionDivider from "../components/ui/SectionDivider";
-import CTASection from "../components/CTASection";
 import Hero from "../components/Hero";
+import Section from "../components/ui/Section";
+import SectionDivider from "../components/ui/SectionDivider";
+import Button from "../components/ui/Button";
+import CTASection from "../components/CTASection";
+import benefitsBizImg from "../assets/benefits.jpg";
+import benefitsGuestImg from "../assets/benefits2.jpg";
 
-export default function About() {
+export default function Benefits() {
   return (
     <div className="bg-white text-gray-800">
-<Hero subtitle="Family-first hospitality, reimagined." pageTitle="About" />
-      {/* 🏛 Mission & Purpose */}
+      <Hero subtitle="Clear gains. Zero friction." pageTitle="Benefits" />
+
       <Section
-        kicker="About Carriage Concierge"
-        title="Elevating the Family Experience in Luxury Hospitality"
-        image={aboutImg}
-        imageAlt="Luxury hotel family scene"
+        kicker="Business Impact"
+        title="Earn Revenue, Not Operational Load"
+        image={benefitsBizImg}
+        imageAlt="Hotel gear delivery"
         imagePosition="left"
       >
-        <p className="text-lg leading-relaxed text-gray-700">
-          Carriage Concierge was created to help hotels meet the evolving expectations of today’s traveling families—without disrupting the operations of high-performing hospitality teams.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700 mt-4">
-          Our white-glove amenity program equips your property with everything it needs to feel family-ready overnight, while preserving your focus on core guest experiences.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700 mt-4">
-          The result? A differentiated, memorable stay for your youngest guests—and added revenue, reputation, and loyalty for your brand.
-        </p>
+        <ul className="text-lg leading-relaxed list-disc list-inside text-gray-700 space-y-3">
+          <li>Share revenue on every guest transaction</li>
+          <li>Zero extra work—fully managed by BabyQuip</li>
+          <li>Differentiate on OTAs and corporate RFPs</li>
+          <li>First-mover advantage in your market</li>
+        </ul>
       </Section>
 
-      <SectionDivider showArrow />
+      <SectionDivider />
 
-      {/* 🤝 Infrastructure */}
       <Section
-        kicker="Trusted Infrastructure"
-        title="Powered by BabyQuip—The Global Leader in Family Travel Logistics"
-        image={babyquipImg}
-        imageAlt="BabyQuip team with gear"
+        kicker="Guest Experience"
+        title="Families Leave Raving Reviews"
+        image={benefitsGuestImg}
+        imageAlt="Happy guests with baby gear"
         imagePosition="right"
       >
-        <p className="text-lg leading-relaxed text-gray-700">
-          Our amenity is backed by BabyQuip: the most trusted name in baby gear delivery, with over 35,000 five-star reviews, vetted service providers, and operations in more than 1,500 cities.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700 mt-4">
-          Carriage Concierge overlays this proven logistics engine with your branding, tone, and guest experience standards—ensuring every family touchpoint feels like an extension of your hotel’s excellence.
-        </p>
-        {/* <div className="mt-8">
-          <Button text="Explore How It Works" variant="primary" link="/howitworks" />
-        </div> */}
+        <ul className="text-lg leading-relaxed list-disc list-inside text-gray-700 space-y-3">
+          <li>Parents feel welcomed and cared for</li>
+          <li>Safe, clean, on-site gear—sleep better</li>
+          <li>Families become brand ambassadors</li>
+          <li>Boosts NPS and guest satisfaction</li>
+        </ul>
+        <div className="mt-8">
+          <Button text="How It Works" variant="primary" link="/how-it-works" />
+        </div>
       </Section>
+
       <CTASection />
     </div>
   );

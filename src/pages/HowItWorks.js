@@ -1,7 +1,7 @@
 import React from "react";
 import Section from "../components/ui/Section";
 import SectionDivider from "../components/ui/SectionDivider";
-import Button from "../components/ui/Button";
+// import Button from "../components/ui/Button";
 import stepsImg from "../assets/steps.jpg";
 import partnerImg from "../assets/partner.jpg";
 import CTASection from "../components/CTASection";

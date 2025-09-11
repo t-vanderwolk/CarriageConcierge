@@ -1,4 +1,6 @@
 // src/components/LogoRow.jsx
+import React from "react";
+import { motion } from "framer-motion";
 const logos = [
   { src: "/images/partners/bugaboo.png", alt: "Bugaboo" },
   { src: "/images/partners/nuna.png", alt: "Nuna" },
@@ -33,27 +35,25 @@ const logos = [
 
 export default function LogoRow() {
   return (
-    <section className="bg-white py-10 px-6 border-t border-b border-gray-100">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-white py-10 px-6 border-t border-b border-gray-100"
+    >
       <div className="text-center mb-6">
-        <h2 className="text-lg font-medium text-gray-600 tracking-wide uppercase">
-          Trusted by Leading Brands
-        </h2>
+        <h2 className="text-lg font-medium text-gray-600 tracking-wide uppercase">Trusted by Leading Brands</h2>
       </div>
-
       <div className="overflow-x-auto scrollbar-hide">
         <div className="flex space-x-8 md:space-x-12 px-4 py-2 snap-x snap-mandatory">
           {logos.map((logo) => (
             <div key={logo.alt} className="snap-center flex-shrink-0">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="h-7 md:h-8 object-contain grayscale hover:grayscale-0 transition duration-300"
-                loading="lazy"
-              />
+              <img src={logo.src} alt={logo.alt} loading="lazy" className="h-8 md:h-10 grayscale hover:grayscale-0 transition-opacity duration-300" />
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
+
 }

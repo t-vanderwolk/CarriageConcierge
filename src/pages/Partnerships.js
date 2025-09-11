@@ -1,33 +1,36 @@
 import React from "react";
-import CTASection from "../components/CTASection";
-import { motion } from "framer-motion";
 import Hero from "../components/Hero";
 import Section from "../components/ui/Section";
+import SectionDivider from "../components/ui/SectionDivider";
 import Button from "../components/ui/Button";
+import CTASection from "../components/CTASection";
+
 export default function Partnerships() {
   return (
-    <div className="bg-white min-h-screen py-20 px-6">
-     <Hero subtitle="Start with a conversation." pageTitle="Partnerships" />
-      {/* 🎯 Hero Title Section */}
-      <section className="text-center mb-16 max-w-3xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-serif font-light text-gray-900">
-          Delight Families. Without Lifting a Finger.
-        </h1>
-        <p className="text-lg text-gray-700 mt-4">
-          Let’s explore whether Carriage Concierge is the right fit for your property.
-          No pressure — just a thoughtful conversation.
-        </p>
-      </section>
+    <div className="bg-white text-gray-800">
+      <Hero subtitle="Start with a conversation." pageTitle="Partnerships" />
 
-      {/* 💬 Contact Form */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-3xl mx-auto bg-neutral-50 border border-gray-100 p-8 rounded-xl shadow-sm"
+      <Section
+        kicker="Let’s Explore a Partnership"
+        title="Where Your Property Meets Family Travel Luxury"
+        image={null}
+        imagePosition="left"
+      >
+        <p className="text-lg leading-relaxed text-gray-700">
+          We'd love to learn about your current operations, understand your needs, and explore whether Carriage Concierge is the right fit for your property. No automated demos—just a thoughtful, friendly conversation.
+        </p>
+      </Section>
+
+      <SectionDivider />
+
+      <Section
+        kicker="Connect With Us"
+        title="Tell Us About Your Property"
+        image={null}
+        imagePosition="right"
       >
         <form
-          action="https://formspree.io/f/{your-form-id}" // ⛳️ Update with real endpoint
+          action="https://formspree.io/f/{your-form-id}" // ← Add your Formspree ID
           method="POST"
           className="grid gap-6 md:grid-cols-2"
         >
@@ -83,26 +86,16 @@ export default function Partnerships() {
           </div>
 
           <div className="md:col-span-2">
-            <button
-              type="submit"
-              className="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-md font-medium transition-colors duration-200"
-            >
-              Request a Pilot Conversation
-            </button>
+            <Button text="Request a Pilot" variant="primary" link="/partnerships" />
           </div>
         </form>
-<Button text="Submit" variant="primary"  />
-        <p className="text-sm text-gray-500 mt-6">
-          Your info stays private. We’ll reach out within 1–2 business days.
-        </p>
-        {/* <Button /> */}
-      </motion.div>
 
-  
-      {/* 🧾 Optional CTA Section */}
-     
-    
-    <Section />
-    <CTASection /> 
-  </div>
-  )}
+        <p className="text-sm text-gray-500 mt-6">
+          Your information is private—we’ll get back to you within 1–2 business days.
+        </p>
+      </Section>
+
+      <CTASection />
+    </div>
+  );
+}

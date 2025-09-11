@@ -1,13 +1,14 @@
 import React from "react";
+import Hero from "../components/Hero";
+import LogoRow from "../components/LogoRow";
 import Section from "../components/ui/Section";
+import SectionDivider from "../components/ui/SectionDivider";
 import Button from "../components/ui/Button";
+import CTASection from "../components/CTASection";
+
 import heroImg from "../assets/hero.jpg";
 import valueImg from "../assets/value.jpg";
 import noworkImg from "../assets/nowork.png";
-import SectionDivider from "../components/ui/SectionDivider";
-import Hero from "../components/Hero";
-import LogoRow from "../components/LogoRow";
-import CTASection from "../components/CTASection";
 
 export default function Home() {
   return (
@@ -30,10 +31,10 @@ export default function Home() {
 
       <SectionDivider />
 
-      {/* 🟡 Section: The Solution */}
+      {/* 🟡 Section: Solution */}
       <Section
         kicker="The Solution"
-        title="A Fully Managed, White-Glove Amenity Program"
+        title="A Fully Managed, White‑Glove Amenity Program"
         image={valueImg}
         imageAlt="Baby gear concierge delivery"
         imagePosition="right"
@@ -46,9 +47,9 @@ export default function Home() {
         </p>
       </Section>
 
-      <SectionDivider/>
+      <SectionDivider />
 
-      {/* 🟡 Section: Benefits Teaser */}
+      {/* 🟡 Section: Benefits Preview */}
       <Section
         kicker="Why Hotels Love It"
         title="Revenue. Reputation. Zero Operational Burden."
@@ -62,9 +63,10 @@ export default function Home() {
           <li>Maintain brand alignment with fully managed, insured, and professional service</li>
         </ul>
         <div className="mt-8">
-          {/* <Button text="Explore Full Benefits" variant="primary" link="/benefits" /> */}
+          <Button text="Explore Full Benefits" variant="primary" link="/benefits" />
         </div>
       </Section>
+
       <CTASection />
     </div>
   );
